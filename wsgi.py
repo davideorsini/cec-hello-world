@@ -1,5 +1,6 @@
 import socket
-import time
+import datetime
+
 from flask import Flask
 
 application = Flask(__name__)
@@ -10,7 +11,7 @@ def hello():
 #     text = "" + socket.gethostname() + time.time() + "\n"
 #     flog.write(text)
     flog.close()
-    return "Hello World! Greetings from "+ socket.gethostname() + time.time() + "\n"
+    return "Hello World! Greetings from "+ socket.gethostname() + datetime.datetime.utcnow() + "\n"
 
 
 if __name__ == "__main__":
