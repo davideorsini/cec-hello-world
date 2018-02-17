@@ -8,13 +8,15 @@ application = Flask(__name__)
 def hello():
     #create logfile in persistent storage with write append permission and write timestamp and pod
     with open("/mnt/logfile", "a") as myfile:
-        myfile.write(str(datetime.now()) +": " + socket.gethostname() + "\n")
+        myfile.write(str(datetime.now()) +": " + socket.gethostname() + "<br>\n")
     
     #open logfile and return its contents
     fr = open("/mnt/logfile","r")
     log = fr.read()
     fr.close()
-    return "Logfile\n"+ log + "\n"
+    text = "<html><title> Logfile<br><title>
+            <body>" + log + "</body></html>"
+    return text
     #return "Hello World! Greetings from "+ socket.gethostname() + "\n"
 
 
