@@ -4,11 +4,13 @@ from datetime import datetime
 
 application = Flask(__name__)
 
+@application.route("/")
 def write_logfile():
-   #create logfile in persistent storage with write append permission and write timestamp and pod
+    #create logfile in persistent storage with write append permission and write timestamp and pod
     with open("/mnt/logfile", "a") as myfile:
         myfile.write(str(datetime.now()) +": " + socket.gethostname() + "<br>\n") 
 
+@application.route("/")
 def get_from_logfile():
     #open logfile and return its contents
     fr = open("/mnt/logfile","r")
