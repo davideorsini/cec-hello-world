@@ -14,7 +14,7 @@ def hello():
     fr = open("/mnt/logfile","r")
     log = fr.read()
     fr.close()
-    return "Logfile\n"+ socket.gethostname() + "\n"
+    return "Logfile\n"+ log + "\n"
     #return "Hello World! Greetings from "+ socket.gethostname() + "\n"
 
 
