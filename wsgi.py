@@ -7,9 +7,10 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     flog = open('/mnt/log.txt', 'a')
-    flog.write("ciao")
+    text = "" + socket.gethostname() + time.time() + "\n"
+    flog.write(text)
     flog.close()
-    return "Hello World! Greetings from "+socket.gethostname()+"\n"
+    return "Hello World! Greetings from "+ socket.gethostname() + time.time()"\n"
 
 
 if __name__ == "__main__":
