@@ -14,8 +14,7 @@ def hello():
     fr = open("/mnt/logfile","r")
     log = fr.read()
     fr.close()
-    text = "<html><title> Logfile<br><title>
-            <body>" + log + "</body></html>"
+    text = "<html><title> Logfile <br></title><body>" + log + "</body></html>"
     return text
     #return "Hello World! Greetings from "+ socket.gethostname() + "\n"
 
