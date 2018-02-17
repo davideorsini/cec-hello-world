@@ -7,7 +7,7 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     flog = open('/mnt/log.txt', 'a')
-    flog.write(socket.gethostname() + time.time() + "\n")
+    flog.write("ciao")
     flog.close()
     return "Hello World! Greetings from "+socket.gethostname()+"\n"
 
